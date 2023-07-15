@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+  Add Task
+{% endblock title %}
+{% block style %}
+  <style>
+    .form-div {
+      background-color: white;
+    }
+
+    .form-box {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+{% endblock style %}
+{% block content %}
+  <main>
+    <section class="py-5">
+      <div class="container form-div p-5 rounded-2">
+        <form class="form-box d-grid gap-3" action="" method="POST">
+          {% csrf_token %}
+          {% for field in form %}
+            <div>
+              {{ field.errors }}
+              <label class="form-label m-0" for="{{ field.id_for_label }}">
+                {{ field.label }}
+              </label>
+              {{ field }}
+            </div>
+          {% endfor %}
+          <button class="btn btn-primary" type="submit">
+            Add
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock content %}

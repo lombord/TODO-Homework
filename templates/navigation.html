@@ -1,0 +1,17 @@
+<style>
+  .nav-container {
+    background-color: white;
+  }
+</style>
+<nav>
+  <div class="container nav-container rounded-bottom">
+    <ul class="d-flex align-items-center list-unstyled justify-content-evenly py-2">
+      <li>
+        <a href="{% url 'home' %}" class="nav-link link link-primary">Home</a>
+      </li>
+      <li>
+        <a href="{% url 'add_task' %}" class="nav-link link link-primary">Add Task</a>
+      </li>
+    </ul>
+  </div>
+</nav>
